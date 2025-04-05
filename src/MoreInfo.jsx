@@ -40,7 +40,7 @@ export function MoreInfo() {
       ))}
     </div>
 
-    <div className='mainCont '>
+    {/* <div className='mainCont '>
       {api[0].PostOffice.map((ele,index)=>(
         <div className='card' key={index}>
           <div className='txt'>Name:- {ele.Name}</div>
@@ -51,7 +51,7 @@ export function MoreInfo() {
         </div>
         
       ))}
-    </div>
+    </div> */}
     </div>
   );
 }
