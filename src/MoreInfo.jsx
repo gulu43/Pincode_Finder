@@ -33,7 +33,7 @@ export function MoreInfo() {
         <div className='mainCont '>
           {
             !api[0].PostOffice || api[0].PostOffice[0] == null ? (
-              <h1>Pincode is Not Valid</h1>
+              <h2>Pincode is Not Valid.</h2>
             ) : (
               api[0].PostOffice.map((ele, index) => (
                 <div className='card' key={index}>
@@ -55,17 +55,22 @@ export function MoreInfo() {
       {/* if the filter gets empty it does not shows  data */}
       {filterName !== '' && (
         <div className='mainCont '>
-          {api[0].PostOffice.filter((ele, index) => (
-            ele.Name.includes(filterName)
-          )).map((ele, index) => (
-            <div className='card' key={index}>
-              <div className='txt'>Name:- {ele.Name}</div>
-              <div className='txt'>BranchType:- {ele.BranchType}</div>
-              <div className='txt'>DeliveryStatus:- {ele.DeliveryStatus}</div>
-              <div className='txt'>District:- {ele.District}</div>
-              <div className='txt'>Division:- {ele.Division}</div>
-            </div>
-          ))}
+          {
+            !api[0].PostOffice || api[0].PostOffice[0] == null ? (
+              <h1>Pincode is Not Valid .</h1>
+            ) : (
+              api[0].PostOffice.filter((ele, index) => (
+                ele.Name.includes(filterName)
+              )).map((ele, index) => (
+                <div className='card' key={index}>
+                  <div className='txt'>Name:- {ele.Name}</div>
+                  <div className='txt'>BranchType:- {ele.BranchType}</div>
+                  <div className='txt'>DeliveryStatus:- {ele.DeliveryStatus}</div>
+                  <div className='txt'>District:- {ele.District}</div>
+                  <div className='txt'>Division:- {ele.Division}</div>
+                </div>
+              ))
+            )}
         </div>
       )}
 
